@@ -1,28 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.zelo.com.br/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.zelo.com.br/recursos.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.zelo.com.br/precos.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.zelo.com.br/sobre.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.zelo.com.br/contato.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <url><loc>https://megatechcaxias.com.br/agente/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://megatechcaxias.com.br/agente/recursos.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://megatechcaxias.com.br/agente/precos.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://megatechcaxias.com.br/agente/sobre.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://megatechcaxias.com.br/agente/contato.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Preços - ZELO.APP</title>
+<title>Preços - AGENTE</title>
 <meta name="description" content="Planos Smart, Business e Enterprise para cuidar do parque de TI da sua empresa. Sem fidelidade — cancele quando quiser.">
-<link rel="canonical" href="https://www.zeloapp.com.br/precos.html">
+<link rel="canonical" href="https://megatechcaxias.com.br/agente/precos.html">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,6 +83,7 @@
   .plan-desc{color:var(--text-muted); font-size:13.5px; margin-bottom:22px; min-height:40px;}
   .plan-price{font-family:var(--display); font-size:38px; font-weight:800; margin-bottom:4px;}
   .plan-price span:last-child{font-size:15px; font-weight:500; color:var(--text-muted);}
+  .promo-tag{display:inline-block; background:var(--red); color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:999px; margin-bottom:10px;}
   .plan-period{color:var(--text-dim); font-size:12.5px; margin-bottom:24px;}
   .plan-features{list-style:none; margin-bottom:26px;}
   .plan-features li{display:flex; gap:9px; font-size:13.5px; color:var(--text-muted); padding:8px 0; border-top:1px solid var(--border);}
@@ -127,7 +128,7 @@
 <header id="site-header">
   <div class="wrap">
     <nav aria-label="Navegação principal">
-      <div class="brand"><span class="brand-mark" aria-hidden="true"></span>ZELO</div>
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span>AGENTE</div>
       <div class="nav-links">
         <a href="index.html">Início</a>
         <a href="recursos.html">Recursos</a>
@@ -176,8 +177,9 @@
       <div class="plan">
         <div class="plan-name">Smart</div>
         <div class="plan-desc">Pra pequenas equipes organizando o parque de TI pela primeira vez.</div>
-        <div class="plan-price">R$<span class="price-value" data-monthly="14,90" data-annual="149">14,90</span><span class="period-unit">/mês</span></div>
-        <div class="plan-period period-label">até 25 dispositivos · cobrado mensalmente</div>
+        <div class="promo-tag" data-promo>1º mês por R$ 1,90</div>
+        <div class="plan-price">R$<span class="price-value" data-monthly="14,90" data-annual="149" data-monthly-promo="1,90">14,90</span><span class="period-unit">/mês</span></div>
+        <div class="plan-period period-label" data-full-price="R$ 14,90/mês a partir do 2º mês">até 25 dispositivos · cobrado mensalmente</div>
         <ul class="plan-features">
           <li>Inventário completo de hardware e software</li>
           <li>Alertas automáticos calibrados</li>
@@ -185,14 +187,15 @@
           <li>1 usuário administrador</li>
           <li>Suporte por e-mail</li>
         </ul>
-        <a href="contato.html" class="btn btn-ghost">Começar com Smart</a>
+        <a href="https://app.megatechcaxias.com.br/assinar?plano=smart&periodo=mensal&promo=1" class="btn btn-ghost plan-cta" data-plano="smart">Começar com Smart</a>
       </div>
 
       <div class="plan featured">
         <div class="plan-name">Business</div>
         <div class="plan-desc">Pra empresas com múltiplas equipes, unidades ou departamentos.</div>
-        <div class="plan-price">R$<span class="price-value" data-monthly="99,90" data-annual="999">99,90</span><span class="period-unit">/mês</span></div>
-        <div class="plan-period period-label">até 100 dispositivos · cobrado mensalmente</div>
+        <div class="promo-tag" data-promo>1º mês por R$ 25,90</div>
+        <div class="plan-price">R$<span class="price-value" data-monthly="99,90" data-annual="999" data-monthly-promo="25,90">99,90</span><span class="period-unit">/mês</span></div>
+        <div class="plan-period period-label" data-full-price="R$ 99,90/mês a partir do 2º mês">até 100 dispositivos · cobrado mensalmente</div>
         <ul class="plan-features">
           <li>Tudo do Smart</li>
           <li>Usuários com acesso restrito por área</li>
@@ -200,24 +203,25 @@
           <li>Saúde de bateria, disco e temperatura</li>
           <li>Suporte prioritário</li>
         </ul>
-        <a href="contato.html" class="btn btn-primary">Começar com Business</a>
+        <a href="https://app.megatechcaxias.com.br/assinar?plano=business&periodo=mensal&promo=1" class="btn btn-primary plan-cta" data-plano="business">Começar com Business</a>
       </div>
 
       <div class="plan">
         <div class="plan-name">Enterprise</div>
         <div class="plan-desc">Pra operações grandes com necessidades específicas.</div>
-        <div class="plan-price">R$<span class="price-value" data-monthly="299,90" data-annual="2.999">299,90</span><span class="period-unit">/mês</span></div>
-        <div class="plan-period period-label">dispositivos ilimitados · cobrado mensalmente</div>
+        <div class="promo-tag" data-promo>1º mês por R$ 79,90</div>
+        <div class="plan-price">R$<span class="price-value" data-monthly="299,90" data-annual="2.999" data-monthly-promo="79,90">299,90</span><span class="period-unit">/mês</span></div>
+        <div class="plan-period period-label" data-full-price="R$ 299,90/mês a partir do 2º mês">dispositivos ilimitados · cobrado mensalmente</div>
         <ul class="plan-features">
           <li>Tudo do Business</li>
           <li>Ações de segurança remotas (BitLocker, antivírus)</li>
           <li>Múltiplas unidades e integrações dedicadas</li>
           <li>Gerente de conta dedicado</li>
         </ul>
-        <a href="contato.html" class="btn btn-ghost">Falar com vendas</a>
+        <a href="https://app.megatechcaxias.com.br/assinar?plano=enterprise&periodo=mensal&promo=1" class="btn btn-ghost plan-cta" data-plano="enterprise">Começar com Enterprise</a>
       </div>
     </div>
-    <p style="text-align:center; color:var(--text-dim); font-size:13px; margin-top:24px;" data-reveal>Valores sujeitos a ajuste conforme volume e necessidades específicas.</p>
+    <p style="text-align:center; color:var(--text-dim); font-size:13px; margin-top:24px;" data-reveal>Oferta de 1º mês válida apenas no plano mensal, para novos clientes. Valores sujeitos a ajuste conforme volume e necessidades específicas.</p>
 
     <table class="compare-table" data-reveal>
       <thead><tr><th>Recurso</th><th>Smart</th><th>Business</th><th>Enterprise</th></tr></thead>
@@ -266,12 +270,12 @@
 <footer>
   <div class="wrap">
     <div class="footer-grid">
-      <div><div class="brand"><span class="brand-mark" aria-hidden="true"></span>ZELO</div><p class="footer-desc">Cuidado contínuo com o parque de TI da sua empresa.</p></div>
+      <div><div class="brand"><span class="brand-mark" aria-hidden="true"></span>AGENTE</div><p class="footer-desc">Cuidado contínuo com o parque de TI da sua empresa.</p></div>
       <div class="footer-col"><h4>Produto</h4><a href="recursos.html">Recursos</a><a href="precos.html">Preços</a></div>
       <div class="footer-col"><h4>Empresa</h4><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a></div>
       <div class="footer-col"><h4>Legal</h4><a href="#">Termos de uso</a><a href="#">Privacidade</a></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 ZELO. Todos os direitos reservados.</span><span>Brasil</span></div>
+    <div class="footer-bottom"><span>© 2026 AGENTE. Todos os direitos reservados.</span><span>Brasil</span></div>
   </div>
 </footer>
 
@@ -300,13 +304,21 @@ toggle.addEventListener('click', (e) => {
   btn.classList.add('active');
   const period = btn.dataset.period;
   const isAnnual = period === 'annual';
+
   document.querySelectorAll('.price-value').forEach(el => {
-    el.textContent = el.dataset[isAnnual ? 'annual' : 'monthly'];
+    el.textContent = isAnnual ? el.dataset.annual : (el.dataset.monthlyPromo || el.dataset.monthly);
   });
   document.querySelectorAll('.period-unit').forEach(el => { el.textContent = isAnnual ? '/ano' : '/mês'; });
   document.querySelectorAll('.period-label').forEach(el => {
     const base = el.textContent.split('·')[0].trim();
     el.textContent = base + ' · ' + (isAnnual ? 'cobrado anualmente' : 'cobrado mensalmente');
+  });
+  document.querySelectorAll('[data-promo]').forEach(el => { el.style.display = isAnnual ? 'none' : 'inline-block'; });
+  document.querySelectorAll('.plan-cta').forEach(el => {
+    const plano = el.dataset.plano;
+    el.href = isAnnual
+      ? `https://app.megatechcaxias.com.br/assinar?plano=${plano}&periodo=anual`
+      : `https://app.megatechcaxias.com.br/assinar?plano=${plano}&periodo=mensal&promo=1`;
   });
 });
 </script>
