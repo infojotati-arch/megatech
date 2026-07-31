@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preços - ZELO.APP</title>
+<meta name="description" content="Planos Smart, Business e Enterprise para cuidar do parque de TI da sua empresa. Sem fidelidade — cancele quando quiser.">
+<link rel="canonical" href="https://www.zeloapp.com.br/precos.html">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF; --tint:#F6F3EC; --surface:#FFFFFF; --surface-2:#F1ECE2;
+    --border:rgba(23,21,18,.08); --border-strong:rgba(23,21,18,.16);
+    --text:#171512; --text-muted:#5B564C; --text-dim:#8C8477;
+    --red:#D93A2B; --red-dark:#B92E21; --red-darker:#7A1F16; --gold:#C9791E;
+    --display:'Inter', sans-serif; --body:'Inter', sans-serif; --mono:'Inter', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--text); font-family:var(--body); line-height:1.65; -webkit-font-smoothing:antialiased;}
+  a{color:var(--red); text-decoration:none;}
+  a:hover{color:var(--red-dark);}
+  ::selection{background:var(--red); color:#fff;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  section{padding:88px 0;}
+  @media (max-width:720px){ section{padding:56px 0;} }
+  h1,h2,h3{font-family:var(--display); font-weight:700; letter-spacing:-0.01em; line-height:1.15;}
+
+  .skip-link{position:absolute; left:-999px; top:0; background:var(--red); color:#fff; padding:12px 20px; z-index:100; font-weight:700; border-radius:0 0 8px 0;}
+  .skip-link:focus{left:0;}
+  :focus-visible{outline:2px solid var(--red); outline-offset:2px;}
+
+  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--red); display:flex; align-items:center; gap:9px; margin-bottom:18px; font-weight:700;}
+  .eyebrow.center{justify-content:center;}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 28px; border-radius:8px; font-weight:700; font-size:15.5px; border:1px solid transparent; cursor:pointer; transition:.18s ease; width:100%;}
+  .btn-primary{background:var(--red); color:#fff;}
+  .btn-primary:hover{background:var(--red-dark); transform:translateY(-2px);}
+  .btn-ghost{background:transparent; border-color:var(--border-strong); color:var(--text);}
+  .btn-ghost:hover{border-color:var(--red);}
+  .btn-sm{padding:10px 16px; font-size:13.5px; width:auto;}
+
+  header{position:fixed; top:0; left:0; right:0; z-index:50; backdrop-filter:blur(14px); background:rgba(255,255,255,.75); border-bottom:1px solid var(--border); transition:background .25s ease, box-shadow .25s ease;}
+  header.scrolled{background:rgba(255,255,255,.94); box-shadow:0 8px 24px -12px rgba(23,21,18,.10);}
+  nav{display:flex; align-items:center; justify-content:space-between; height:76px;}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:700; font-size:21px;}
+  .brand-mark{width:30px; height:30px; border-radius:50%; background:radial-gradient(circle at 35% 30%, var(--red-dark), var(--red-darker)); flex-shrink:0; box-shadow:0 0 18px rgba(217,58,43,.35);}
+  .nav-links{display:flex; gap:22px; font-size:14px; color:var(--text-muted); white-space:nowrap;}
+  .nav-links a{color:var(--text-muted);}
+  .nav-links a:hover, .nav-links a.active{color:var(--text);}
+  .nav-links a.active{color:var(--red-dark); font-weight:600;}
+  .nav-cta{display:flex; gap:10px; align-items:center; white-space:nowrap;}
+  .nav-toggle{display:none; background:none; border:none; color:var(--text); cursor:pointer; padding:8px;}
+  .nav-toggle svg{width:24px; height:24px;}
+  @media (max-width:1080px){ .nav-links, .nav-cta{display:none;} .nav-toggle{display:flex;} }
+  .mobile-menu{display:none; background:#fff; border-top:1px solid var(--border); padding:20px 24px; flex-direction:column; gap:4px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:14px 4px; border-bottom:1px solid var(--border); color:var(--text);}
+  .mobile-menu .btn{margin-top:12px;}
+
+  .page-hero{padding:168px 0 50px; text-align:center;}
+  .page-hero h1{max-width:640px; margin:0 auto; font-size:clamp(30px,4vw,44px);}
+  .page-hero p{color:var(--text-muted); font-size:17px; max-width:520px; margin:18px auto 0;}
+
+  .pricing-toggle{display:inline-flex; align-items:center; gap:4px; background:var(--surface-2); border-radius:999px; padding:5px; margin-bottom:48px;}
+  .pricing-toggle button{
+    border:none; background:none; padding:10px 20px; border-radius:999px; font-size:13.5px; font-weight:600;
+    color:var(--text-muted); cursor:pointer; display:flex; align-items:center; gap:8px; font-family:inherit;
+  }
+  .pricing-toggle button.active{background:#fff; color:var(--text); box-shadow:0 2px 8px rgba(23,21,18,.08);}
+  .pricing-toggle .save{background:var(--red); color:#fff; font-size:10.5px; padding:2px 7px; border-radius:999px; font-weight:700;}
+
+  .plans{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:0;}
+  @media (max-width:900px){ .plans{grid-template-columns:1fr; max-width:400px; margin:0 auto;} }
+  .plan{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:32px; text-align:left; transition:.2s ease;}
+  .plan:hover{border-color:var(--border-strong); transform:translateY(-4px);}
+  .plan.featured{border-color:var(--red); box-shadow:0 20px 50px -20px rgba(217,58,43,.25); position:relative;}
+  .plan.featured::before{content:"MAIS POPULAR"; position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--red); color:#fff; font-size:10.5px; font-weight:700; letter-spacing:.05em; padding:5px 14px; border-radius:999px;}
+  .plan-name{font-family:var(--display); font-weight:700; font-size:19px; margin-bottom:8px;}
+  .plan-desc{color:var(--text-muted); font-size:13.5px; margin-bottom:22px; min-height:40px;}
+  .plan-price{font-family:var(--display); font-size:38px; font-weight:800; margin-bottom:4px;}
+  .plan-price span:last-child{font-size:15px; font-weight:500; color:var(--text-muted);}
+  .plan-period{color:var(--text-dim); font-size:12.5px; margin-bottom:24px;}
+  .plan-features{list-style:none; margin-bottom:26px;}
+  .plan-features li{display:flex; gap:9px; font-size:13.5px; color:var(--text-muted); padding:8px 0; border-top:1px solid var(--border);}
+  .plan-features li::before{content:"✓"; color:var(--gold); font-weight:700; flex-shrink:0;}
+
+  .compare-table{width:100%; border-collapse:collapse; margin-top:64px; font-size:14px;}
+  .compare-table th, .compare-table td{padding:14px 16px; text-align:center; border-bottom:1px solid var(--border);}
+  .compare-table th:first-child, .compare-table td:first-child{text-align:left; color:var(--text-muted);}
+  .compare-table th{font-family:var(--display); font-weight:700; font-size:14.5px;}
+  .compare-table .yes{color:#1F8A70; font-weight:700;}
+  .compare-table{display:none;}
+  @media (min-width:701px){ .compare-table{display:table;} }
+
+  .section-head{max-width:640px; margin:0 auto; text-align:center;}
+  .section-head h2{font-size:clamp(26px,3.2vw,38px); margin-bottom:16px;}
+  .faq{max-width:720px; margin:48px auto 0;}
+  .faq-item{border-bottom:1px solid var(--border); padding:20px 0;}
+  .faq-item summary{cursor:pointer; font-weight:700; font-size:15px; list-style:none; display:flex; justify-content:space-between; gap:16px;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+"; font-family:var(--mono); color:var(--red); font-size:20px;}
+  .faq-item[open] summary::after{content:"–";}
+  .faq-item p{color:var(--text-muted); font-size:14.5px; margin-top:12px;}
+
+  [data-reveal]{opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].is-visible{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){ [data-reveal]{opacity:1 !important; transform:none !important; transition:none !important;} }
+
+  footer{border-top:1px solid var(--border); padding:56px 0 32px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px;}
+  @media (max-width:760px){ .footer-grid{grid-template-columns:1fr 1fr;} }
+  .footer-col h4{font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-dim); margin-bottom:16px;}
+  .footer-col a{display:block; color:var(--text-muted); font-size:14px; margin-bottom:10px;}
+  .footer-col a:hover{color:var(--text);}
+  .footer-desc{color:var(--text-muted); font-size:14px; max-width:280px; margin-top:14px;}
+  .footer-bottom{margin-top:48px; padding-top:24px; border-top:1px solid var(--border); font-size:12.5px; color:var(--text-dim); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+</style>
+</head>
+<body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<header id="site-header">
+  <div class="wrap">
+    <nav aria-label="Navegação principal">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span>ZELO</div>
+      <div class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="precos.html" class="active" aria-current="page">Preços</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <div class="nav-cta">
+        <a href="contato.html" class="btn btn-ghost btn-sm">Falar com vendas</a>
+        <a href="#planos" class="btn btn-primary btn-sm">Começar agora</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Início</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="precos.html">Preços</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="#planos" class="btn btn-primary">Começar agora</a>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow center" data-reveal="fade">Preços</div>
+    <h1 data-reveal>Um plano para cada tamanho de operação</h1>
+    <p data-reveal>Sem fidelidade. Cancele quando quiser — o acesso continua até o fim do período já pago.</p>
+  </div>
+</section>
+
+<section id="planos" style="padding-top:0;">
+  <div class="wrap">
+    <div style="text-align:center;" data-reveal>
+      <div class="pricing-toggle" id="toggle">
+        <button class="active" data-period="monthly">Mensal</button>
+        <button data-period="annual">Anual <span class="save">2 meses grátis</span></button>
+      </div>
+    </div>
+
+    <div class="plans" data-reveal>
+      <div class="plan">
+        <div class="plan-name">Smart</div>
+        <div class="plan-desc">Pra pequenas equipes organizando o parque de TI pela primeira vez.</div>
+        <div class="plan-price">R$<span class="price-value" data-monthly="14,90" data-annual="149">14,90</span><span class="period-unit">/mês</span></div>
+        <div class="plan-period period-label">até 25 dispositivos · cobrado mensalmente</div>
+        <ul class="plan-features">
+          <li>Inventário completo de hardware e software</li>
+          <li>Alertas automáticos calibrados</li>
+          <li>Relatórios por e-mail</li>
+          <li>1 usuário administrador</li>
+          <li>Suporte por e-mail</li>
+        </ul>
+        <a href="contato.html" class="btn btn-ghost">Começar com Smart</a>
+      </div>
+
+      <div class="plan featured">
+        <div class="plan-name">Business</div>
+        <div class="plan-desc">Pra empresas com múltiplas equipes, unidades ou departamentos.</div>
+        <div class="plan-price">R$<span class="price-value" data-monthly="99,90" data-annual="999">99,90</span><span class="period-unit">/mês</span></div>
+        <div class="plan-period period-label">até 100 dispositivos · cobrado mensalmente</div>
+        <ul class="plan-features">
+          <li>Tudo do Smart</li>
+          <li>Usuários com acesso restrito por área</li>
+          <li>Relatórios por e-mail e WhatsApp</li>
+          <li>Saúde de bateria, disco e temperatura</li>
+          <li>Suporte prioritário</li>
+        </ul>
+        <a href="contato.html" class="btn btn-primary">Começar com Business</a>
+      </div>
+
+      <div class="plan">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-desc">Pra operações grandes com necessidades específicas.</div>
+        <div class="plan-price">R$<span class="price-value" data-monthly="299,90" data-annual="2.999">299,90</span><span class="period-unit">/mês</span></div>
+        <div class="plan-period period-label">dispositivos ilimitados · cobrado mensalmente</div>
+        <ul class="plan-features">
+          <li>Tudo do Business</li>
+          <li>Ações de segurança remotas (BitLocker, antivírus)</li>
+          <li>Múltiplas unidades e integrações dedicadas</li>
+          <li>Gerente de conta dedicado</li>
+        </ul>
+        <a href="contato.html" class="btn btn-ghost">Falar com vendas</a>
+      </div>
+    </div>
+    <p style="text-align:center; color:var(--text-dim); font-size:13px; margin-top:24px;" data-reveal>Valores sujeitos a ajuste conforme volume e necessidades específicas.</p>
+
+    <table class="compare-table" data-reveal>
+      <thead><tr><th>Recurso</th><th>Smart</th><th>Business</th><th>Enterprise</th></tr></thead>
+      <tbody>
+        <tr><td>Dispositivos monitorados</td><td>até 25</td><td>até 100</td><td>ilimitado</td></tr>
+        <tr><td>Inventário de hardware e software</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Alertas automáticos</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Saúde de bateria, disco e temperatura</td><td>—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Relatórios por WhatsApp</td><td>—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Usuários com acesso restrito</td><td>1 admin</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Ações de segurança remotas</td><td>—</td><td>—</td><td class="yes">✓</td></tr>
+        <tr><td>Suporte</td><td>E-mail</td><td>Prioritário</td><td>Gerente dedicado</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section style="background:var(--tint); border-top:1px solid var(--border);">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow center">Dúvidas sobre preço</div>
+      <h2>Antes de perguntar, já deixamos aqui</h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details class="faq-item" open>
+        <summary>O que conta como "dispositivo"?</summary>
+        <p>Cada computador (desktop ou notebook) com o agente instalado conta como 1 dispositivo. Servidores e outros tipos de equipamento têm cotação à parte.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Dá pra mudar de plano depois?</summary>
+        <p>Sim, a qualquer momento. Se sua operação crescer, você troca de plano sem perder histórico nem precisar reinstalar nada.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Existe teste gratuito?</summary>
+        <p>Fale com nosso time de vendas — normalmente conseguimos liberar um período de avaliação em algumas máquinas antes da contratação.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como funciona o cancelamento?</summary>
+        <p>Sem multa e sem burocracia. Você cancela quando quiser e mantém acesso até o fim do período já pago.</p>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><div class="brand"><span class="brand-mark" aria-hidden="true"></span>ZELO</div><p class="footer-desc">Cuidado contínuo com o parque de TI da sua empresa.</p></div>
+      <div class="footer-col"><h4>Produto</h4><a href="recursos.html">Recursos</a><a href="precos.html">Preços</a></div>
+      <div class="footer-col"><h4>Empresa</h4><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="#">Termos de uso</a><a href="#">Privacidade</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 ZELO. Todos os direitos reservados.</span><span>Brasil</span></div>
+  </div>
+</footer>
+
+<script>
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
+const navToggle = document.getElementById('nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+navToggle.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen);
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mobileMenu.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false');
+}));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+const toggle = document.getElementById('toggle');
+toggle.addEventListener('click', (e) => {
+  const btn = e.target.closest('button');
+  if (!btn) return;
+  toggle.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const period = btn.dataset.period;
+  const isAnnual = period === 'annual';
+  document.querySelectorAll('.price-value').forEach(el => {
+    el.textContent = el.dataset[isAnnual ? 'annual' : 'monthly'];
+  });
+  document.querySelectorAll('.period-unit').forEach(el => { el.textContent = isAnnual ? '/ano' : '/mês'; });
+  document.querySelectorAll('.period-label').forEach(el => {
+    const base = el.textContent.split('·')[0].trim();
+    el.textContent = base + ' · ' + (isAnnual ? 'cobrado anualmente' : 'cobrado mensalmente');
+  });
+});
+</script>
+
+</body>
+</html>
