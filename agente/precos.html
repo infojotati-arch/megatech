@@ -312,7 +312,7 @@ toggle.addEventListener('click', (e) => {
   document.querySelectorAll('.price-value').forEach(el => {
     el.textContent = isAnnual ? el.dataset.annual : (el.dataset.monthlyPromo || el.dataset.monthly);
   });
-  document.querySelectorAll('.period-unit').forEach(el => { el.textContent = isAnnual ? '/ano' : '/mês'; });
+  document.querySelectorAll('.period-unit').forEach(el => { el.textContent = isAnnual ? '/ano no PIX' : '/mês no PIX'; });
   document.querySelectorAll('.period-label').forEach(el => {
     const base = el.textContent.split('·')[0].trim();
     el.textContent = base + ' · ' + (isAnnual ? 'cobrado anualmente' : 'cobrado mensalmente');
