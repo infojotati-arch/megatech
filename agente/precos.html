@@ -84,6 +84,7 @@
   .plan-price{font-family:var(--display); font-size:38px; font-weight:800; margin-bottom:4px;}
   .plan-price span:last-child{font-size:15px; font-weight:500; color:var(--text-muted);}
   .promo-tag{display:inline-block; background:var(--red); color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:999px; margin-bottom:10px;}
+  .full-price-note{font-size:12.5px; color:var(--text-dim); margin-bottom:2px;}
   .plan-period{color:var(--text-dim); font-size:12.5px; margin-bottom:24px;}
   .plan-features{list-style:none; margin-bottom:26px;}
   .plan-features li{display:flex; gap:9px; font-size:13.5px; color:var(--text-muted); padding:8px 0; border-top:1px solid var(--border);}
@@ -177,9 +178,10 @@
       <div class="plan">
         <div class="plan-name">Smart</div>
         <div class="plan-desc">Pra pequenas equipes organizando o parque de TI pela primeira vez.</div>
-        <div class="promo-tag" data-promo>1º mês por R$ 1,90</div>
-        <div class="plan-price">R$<span class="price-value" data-monthly="14,90" data-annual="149" data-monthly-promo="1,90">14,90</span><span class="period-unit">/mês</span></div>
-        <div class="plan-period period-label" data-full-price="R$ 14,90/mês a partir do 2º mês">até 25 dispositivos · cobrado mensalmente</div>
+        <div class="promo-tag" data-promo>1º mês com desconto</div>
+        <div class="plan-price">R$<span class="price-value" data-monthly="14,90" data-annual="149" data-monthly-promo="1,90">1,90</span><span class="period-unit">/mês</span></div>
+        <div class="full-price-note" data-promo-note data-full-price="R$ 14,90/mês a partir do 2º mês">R$ 14,90/mês a partir do 2º mês</div>
+        <div class="plan-period period-label">até 25 dispositivos · cobrado mensalmente</div>
         <ul class="plan-features">
           <li>Inventário completo de hardware e software</li>
           <li>Alertas automáticos calibrados</li>
@@ -193,9 +195,10 @@
       <div class="plan featured">
         <div class="plan-name">Business</div>
         <div class="plan-desc">Pra empresas com múltiplas equipes, unidades ou departamentos.</div>
-        <div class="promo-tag" data-promo>1º mês por R$ 25,90</div>
-        <div class="plan-price">R$<span class="price-value" data-monthly="99,90" data-annual="999" data-monthly-promo="25,90">99,90</span><span class="period-unit">/mês</span></div>
-        <div class="plan-period period-label" data-full-price="R$ 99,90/mês a partir do 2º mês">até 100 dispositivos · cobrado mensalmente</div>
+        <div class="promo-tag" data-promo>1º mês com desconto</div>
+        <div class="plan-price">R$<span class="price-value" data-monthly="99,90" data-annual="999" data-monthly-promo="25,90">25,90</span><span class="period-unit">/mês</span></div>
+        <div class="full-price-note" data-promo-note data-full-price="R$ 99,90/mês a partir do 2º mês">R$ 99,90/mês a partir do 2º mês</div>
+        <div class="plan-period period-label">até 100 dispositivos · cobrado mensalmente</div>
         <ul class="plan-features">
           <li>Tudo do Smart</li>
           <li>Usuários com acesso restrito por área</li>
@@ -209,9 +212,10 @@
       <div class="plan">
         <div class="plan-name">Enterprise</div>
         <div class="plan-desc">Pra operações grandes com necessidades específicas.</div>
-        <div class="promo-tag" data-promo>1º mês por R$ 79,90</div>
-        <div class="plan-price">R$<span class="price-value" data-monthly="299,90" data-annual="2.999" data-monthly-promo="79,90">299,90</span><span class="period-unit">/mês</span></div>
-        <div class="plan-period period-label" data-full-price="R$ 299,90/mês a partir do 2º mês">dispositivos ilimitados · cobrado mensalmente</div>
+        <div class="promo-tag" data-promo>1º mês com desconto</div>
+        <div class="plan-price">R$<span class="price-value" data-monthly="299,90" data-annual="2.999" data-monthly-promo="79,90">79,90</span><span class="period-unit">/mês</span></div>
+        <div class="full-price-note" data-promo-note data-full-price="R$ 299,90/mês a partir do 2º mês">R$ 299,90/mês a partir do 2º mês</div>
+        <div class="plan-period period-label">dispositivos ilimitados · cobrado mensalmente</div>
         <ul class="plan-features">
           <li>Tudo do Business</li>
           <li>Ações de segurança remotas (BitLocker, antivírus)</li>
@@ -314,6 +318,7 @@ toggle.addEventListener('click', (e) => {
     el.textContent = base + ' · ' + (isAnnual ? 'cobrado anualmente' : 'cobrado mensalmente');
   });
   document.querySelectorAll('[data-promo]').forEach(el => { el.style.display = isAnnual ? 'none' : 'inline-block'; });
+  document.querySelectorAll('[data-promo-note]').forEach(el => { el.style.display = isAnnual ? 'none' : 'block'; });
   document.querySelectorAll('.plan-cta').forEach(el => {
     const plano = el.dataset.plano;
     el.href = isAnnual
