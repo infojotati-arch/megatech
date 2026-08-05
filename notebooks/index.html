@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conserto e Venda de Notebook em Caxias do Sul - MEGATECH</title>
+<meta name="description" content="Conserto de notebook em Caxias do Sul: troca de tela, teclado, bateria, dobradiça, superaquecimento e upgrade de SSD/memória, além de notebooks novos, seminovos e gamer com garantia. Diagnóstico gratuito e orçamento sem compromisso.">
+<link rel="canonical" href="https://www.megatechcaxias.com.br/notebooks.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Conserto e Venda de Notebook em Caxias do Sul | MEGATECH">
+<meta property="og:description" content="Troca de tela, teclado, bateria e mais, além de notebooks novos, seminovos e gamer com garantia e parcelamento em até 12x.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://www.megatechcaxias.com.br/logo-megatech.png">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ RESET & BASE ============ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#0A0A0D;
+  --surface:#141419;
+  --surface-2:#1B1C22;
+  --surface-3:#232429;
+  --border:rgba(255,255,255,0.08);
+  --border-strong:rgba(255,255,255,0.16);
+  --red:#E31C2F;
+  --red-bright:#FF3348;
+  --red-dim:#8C0F1D;
+  --white:#F6F6F8;
+  --gray:#989AA6;
+  --gray-dim:#63656F;
+  --font-display:'Poppins',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --maxw:1240px;
+  --radius:14px;
+}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
+}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:var(--font-body);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;letter-spacing:-0.02em;line-height:1.1;}
+::selection{background:var(--red);color:#fff;}
+:focus-visible{outline:2px solid var(--red-bright);outline-offset:3px;}
+
+/* background grid texture */
+.bg-grid{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+/* ============ EYEBROW / LABELS ============ */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-body);font-weight:600;font-size:13px;
+  letter-spacing:0.12em;text-transform:uppercase;color:var(--red-bright);
+  margin-bottom:18px;
+}
+.eyebrow::before{content:'';width:8px;height:8px;background:var(--red);border-radius:1px;transform:rotate(45deg);flex-shrink:0;box-shadow:0 0 12px var(--red);}
+
+.section{padding:120px 0;position:relative;z-index:1;}
+.section-head{max-width:640px;margin-bottom:64px;}
+.section-head p.lead{color:var(--gray);font-size:17px;margin-top:16px;}
+.section-title{font-size:clamp(30px,4vw,44px);}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 30px;border-radius:10px;font-family:var(--font-body);
+  font-weight:600;font-size:15px;transition:all .25s ease;white-space:nowrap;
+}
+.btn-primary{
+  background:var(--red);color:#fff;
+  box-shadow:0 8px 24px -8px rgba(227,28,47,0.6);
+}
+.btn-primary:hover{background:var(--red-bright);transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(255,51,72,0.7);}
+.btn-ghost{
+  background:transparent;border:1px solid var(--border-strong);color:var(--white);
+}
+.btn-ghost:hover{border-color:var(--red-bright);background:rgba(227,28,47,0.08);}
+.btn svg{width:18px;height:18px;flex-shrink:0;}
+
+/* ============ HEADER ============ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,10,13,0.7);backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s ease, background .3s ease;
+}
+header.scrolled{border-bottom-color:var(--border);background:rgba(10,10,13,0.92);}
+.navbar{display:flex;align-items:center;justify-content:space-between;height:82px;}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:-0.01em;}
+.brand img{height:64px;width:auto;}
+nav.main-nav{display:flex;align-items:center;gap:36px;}
+nav.main-nav a{
+  font-size:14.5px;font-weight:500;color:var(--gray);transition:color .2s ease;position:relative;
+}
+nav.main-nav a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--red);transition:width .25s ease;}
+nav.main-nav a:hover{color:var(--white);}
+nav.main-nav a:hover::after{width:100%;}
+.header-actions{display:flex;align-items:center;gap:16px;}
+.header-actions .btn{padding:11px 22px;font-size:14px;}
+.menu-toggle{display:none;width:40px;height:40px;align-items:center;justify-content:center;}
+.menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{
+  content:'';display:block;width:22px;height:2px;background:var(--white);position:relative;transition:all .25s ease;
+}
+.menu-toggle span::before{position:absolute;top:-7px;}
+.menu-toggle span::after{position:absolute;top:7px;}
+.menu-toggle.open span{background:transparent;}
+.menu-toggle.open span::before{top:0;transform:rotate(45deg);}
+.menu-toggle.open span::after{top:0;transform:rotate(-45deg);}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  padding-top:120px;padding-bottom:80px;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-20%;right:-10%;width:60%;height:70%;
+  background:radial-gradient(circle, rgba(227,28,47,0.18) 0%, transparent 68%);
+  z-index:0;pointer-events:none;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center;
+  position:relative;z-index:2;
+}
+.hero h1{font-size:clamp(38px,5.2vw,64px);margin-bottom:22px;}
+.hero h1 .accent{color:var(--red);}
+.hero p.sub{font-size:18px;color:var(--gray);max-width:520px;margin-bottom:36px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px;}
+.hero-trust{display:flex;gap:32px;flex-wrap:wrap;}
+.hero-trust div{display:flex;flex-direction:column;}
+.hero-trust strong{font-family:var(--font-display);font-size:26px;font-weight:800;}
+.hero-trust span{font-size:13px;color:var(--gray-dim);}
+
+/* --- diagnostic terminal signature element --- */
+.terminal{
+  position:relative;background:linear-gradient(180deg,var(--surface) 0%, var(--surface-2) 100%);
+  border:1px solid var(--border-strong);border-radius:16px;overflow:hidden;
+  box-shadow:0 30px 80px -30px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.02) inset;
+}
+.terminal-bar{
+  display:flex;align-items:center;gap:8px;padding:14px 18px;background:rgba(255,255,255,0.03);
+  border-bottom:1px solid var(--border);
+}
+.terminal-bar span{width:11px;height:11px;border-radius:50%;background:var(--gray-dim);}
+.terminal-bar span:nth-child(1){background:#4a4b52;}
+.terminal-bar .tlabel{margin-left:8px;font-size:12.5px;color:var(--gray-dim);font-family:var(--font-body);letter-spacing:0.02em;}
+.terminal-body{padding:26px 24px 30px;font-family:'Courier New',monospace;font-size:14px;min-height:280px;position:relative;}
+.terminal-body .line{opacity:0;transform:translateY(6px);animation:tline .5s ease forwards;color:#c9cbd4;margin-bottom:10px;display:flex;gap:10px;}
+.terminal-body .line .ok{color:#3ddc84;font-weight:700;}
+.terminal-body .line .tag{color:var(--red-bright);}
+.terminal-body .cursor{display:inline-block;width:8px;height:15px;background:var(--red-bright);animation:blink 1s step-end infinite;vertical-align:middle;}
+@keyframes tline{to{opacity:1;transform:translateY(0);}}
+@keyframes blink{50%{opacity:0;}}
+.terminal-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);
+}
+.terminal-stats div{padding:20px 16px;text-align:center;border-right:1px solid var(--border);}
+.terminal-stats div:last-child{border-right:none;}
+.terminal-stats strong{display:block;font-family:var(--font-display);font-size:24px;font-weight:800;color:var(--white);}
+.terminal-stats span{font-size:11.5px;color:var(--gray-dim);text-transform:uppercase;letter-spacing:0.06em;}
+.scanline{
+  position:absolute;left:0;right:0;height:2px;
+  background:linear-gradient(90deg, transparent, var(--red-bright), transparent);
+  opacity:0.6;animation:scan 3.2s linear infinite;
+}
+@keyframes scan{0%{top:0%;}100%{top:100%;}}
+
+/* ============ QUEM SOMOS ============ */
+.about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:72px;align-items:center;}
+.about-photo{position:relative;}
+.about-photo .frame{
+  position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border-strong);
+  background:var(--surface);
+}
+.about-photo img{width:100%;height:auto;display:block;filter:grayscale(15%) contrast(1.05);}
+.about-photo .tagcard{
+  position:absolute;bottom:-22px;left:-22px;background:var(--surface-2);border:1px solid var(--border-strong);
+  border-radius:12px;padding:16px 20px;box-shadow:0 20px 40px -20px rgba(0,0,0,0.7);
+}
+.about-photo .tagcard strong{display:block;font-family:var(--font-display);font-size:15px;font-weight:700;}
+.about-photo .tagcard span{font-size:12.5px;color:var(--gray);}
+.about-text p{color:var(--gray);font-size:16px;margin-bottom:18px;}
+.about-text p:first-of-type{color:#d3d4da;font-size:18px;}
+
+/* ============ NUMEROS ============ */
+.numbers-band{
+  background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:72px 0;
+}
+.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.num-item{text-align:center;padding:0 20px;position:relative;}
+.num-item:not(:last-child)::after{content:'';position:absolute;right:0;top:10%;bottom:10%;width:1px;background:var(--border);}
+.num-item strong{
+  font-family:var(--font-display);font-weight:900;font-size:clamp(34px,4vw,48px);
+  display:block;color:var(--white);
+}
+.num-item strong .plus{color:var(--red-bright);}
+.num-item p{color:var(--gray);font-size:14px;margin-top:6px;}
+
+/* ============ SERVICOS ============ */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.service-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:34px 30px;transition:all .3s ease;position:relative;overflow:hidden;
+}
+.service-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--red),var(--red-bright));transform:scaleX(0);transform-origin:left;
+  transition:transform .35s ease;
+}
+.service-card:hover{border-color:var(--border-strong);transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(0,0,0,0.6);}
+.service-card:hover::before{transform:scaleX(1);}
+.service-icon{
+  width:52px;height:52px;border-radius:12px;background:rgba(227,28,47,0.1);
+  display:flex;align-items:center;justify-content:center;margin-bottom:24px;
+}
+.service-icon svg{width:26px;height:26px;stroke:var(--red-bright);}
+.service-card h3{font-size:21px;margin-bottom:12px;}
+.service-card > p{color:var(--gray);font-size:14.5px;margin-bottom:20px;}
+.service-card ul{display:flex;flex-wrap:wrap;gap:8px;}
+.service-card ul li{
+  font-size:12.5px;color:#c9cbd4;background:var(--surface-3);border:1px solid var(--border);
+  padding:6px 12px;border-radius:100px;
+}
+
+/* ============ PRODUTOS ============ */
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.product-chip{
+  background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  padding:24px 20px;text-align:center;transition:all .25s ease;
+}
+.product-chip:hover{border-color:var(--red-dim);background:var(--surface-2);transform:translateY(-3px);}
+.product-chip svg{width:28px;height:28px;stroke:var(--gray);margin:0 auto 14px;transition:stroke .25s ease;}
+.product-chip:hover svg{stroke:var(--red-bright);}
+.product-chip span{font-size:14px;font-weight:500;color:#d3d4da;}
+
+/* ============ MARCAS ============ */
+.brands-wrap{
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:56px 0;overflow:hidden;position:relative;
+}
+.brands-wrap::before,.brands-wrap::after{
+  content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;
+}
+.brands-wrap::before{left:0;background:linear-gradient(90deg,var(--bg),transparent);}
+.brands-wrap::after{right:0;background:linear-gradient(270deg,var(--bg),transparent);}
+.marquee{display:flex;width:max-content;animation:marquee 34s linear infinite;}
+.marquee-group{display:flex;align-items:center;}
+.marquee span{
+  font-family:var(--font-display);font-weight:700;font-size:24px;color:var(--gray-dim);
+  padding:0 40px;white-space:nowrap;transition:color .2s ease;
+}
+.marquee span:hover{color:var(--white);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ============ DIFERENCIAIS ============ */
+.diff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.diff-item{background:var(--bg);padding:32px 26px;transition:background .25s ease;}
+.diff-item:hover{background:var(--surface);}
+.diff-item svg{width:24px;height:24px;stroke:var(--red-bright);margin-bottom:16px;}
+.diff-item h4{font-size:15.5px;font-weight:700;margin-bottom:6px;}
+.diff-item p{font-size:13px;color:var(--gray-dim);}
+
+/* ============ PROCESSO ============ */
+.process-track{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;}
+.process-track::before{
+  content:'';position:absolute;top:28px;left:8%;right:8%;height:1px;
+  background:repeating-linear-gradient(90deg,var(--border-strong) 0 10px, transparent 10px 20px);
+  z-index:0;
+}
+.process-step{position:relative;z-index:1;}
+.process-num{
+  width:56px;height:56px;border-radius:50%;background:var(--surface);border:1px solid var(--border-strong);
+  display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;
+  font-size:19px;margin-bottom:22px;color:var(--red-bright);
+}
+.process-step h4{font-size:17px;margin-bottom:8px;}
+.process-step p{font-size:14px;color:var(--gray);}
+
+/* ============ DEPOIMENTOS ============ */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.testi-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:30px;
+  display:flex;flex-direction:column;
+}
+.testi-stars{display:flex;gap:4px;margin-bottom:18px;}
+.testi-stars svg{width:16px;height:16px;fill:var(--red-bright);stroke:none;}
+.testi-card p.quote{font-size:15px;color:#d3d4da;margin-bottom:24px;flex-grow:1;}
+.testi-person{display:flex;align-items:center;gap:12px;}
+.testi-avatar{
+  width:42px;height:42px;border-radius:50%;background:var(--surface-3);border:1px solid var(--border-strong);
+  display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--red-bright);
+}
+.testi-person strong{display:block;font-size:14.5px;}
+.testi-person span{font-size:12.5px;color:var(--gray-dim);}
+
+/* ============ FAQ ============ */
+.faq-list{max-width:820px;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  padding:26px 4px;text-align:left;font-family:var(--font-display);font-weight:700;font-size:16.5px;
+}
+.faq-q svg{width:20px;height:20px;stroke:var(--red-bright);flex-shrink:0;transition:transform .3s ease;}
+.faq-item.open .faq-q svg{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a p{padding:0 4px 26px;color:var(--gray);font-size:15px;max-width:680px;}
+
+/* ============ CTA FINAL ============ */
+.cta-final{
+  position:relative;border-radius:24px;overflow:hidden;padding:80px 60px;text-align:center;
+  background:linear-gradient(135deg, var(--surface) 0%, #1a0a0d 100%);
+  border:1px solid var(--border-strong);
+}
+.cta-final::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 20%, rgba(227,28,47,0.25), transparent 55%);
+}
+.cta-final > *{position:relative;z-index:1;}
+.cta-final h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px;}
+.cta-final p{color:var(--gray);font-size:17px;max-width:520px;margin:0 auto 36px;}
+.cta-final .btn-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+/* ============ CONTATO ============ */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+.contact-info-list{display:flex;flex-direction:column;gap:22px;margin-top:32px;}
+.contact-info-item{display:flex;gap:16px;align-items:flex-start;}
+.contact-info-item .ic{
+  width:44px;height:44px;border-radius:10px;background:rgba(227,28,47,0.1);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.contact-info-item .ic svg{width:20px;height:20px;stroke:var(--red-bright);}
+.contact-info-item strong{display:block;font-size:15px;margin-bottom:2px;}
+.contact-info-item span,.contact-info-item a{font-size:14.5px;color:var(--gray);}
+.contact-info-item a:hover{color:var(--white);}
+.map-wrap{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border-strong);min-height:100%;}
+.map-wrap iframe{width:100%;height:100%;min-height:440px;border:0;filter:grayscale(0.3) invert(0.9) contrast(0.9);}
+.social-row{display:flex;gap:12px;margin-top:28px;}
+.social-row a{
+  width:42px;height:42px;border-radius:10px;border:1px solid var(--border-strong);
+  display:flex;align-items:center;justify-content:center;transition:all .2s ease;
+}
+.social-row a:hover{background:var(--red);border-color:var(--red);}
+.social-row a svg{width:18px;height:18px;stroke:var(--white);}
+
+/* ============ FOOTER ============ */
+footer{border-top:1px solid var(--border);padding:70px 0 30px;position:relative;z-index:1;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+.footer-brand .brand{margin-bottom:16px;}
+.footer-brand p{color:var(--gray-dim);font-size:14px;max-width:280px;}
+.footer-col h5{font-size:13.5px;text-transform:uppercase;letter-spacing:0.06em;color:var(--gray);margin-bottom:20px;}
+.footer-col ul{display:flex;flex-direction:column;gap:12px;}
+.footer-col a{font-size:14.5px;color:var(--gray-dim);transition:color .2s ease;}
+.footer-col a:hover{color:var(--white);}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  padding-top:28px;border-top:1px solid var(--border);font-size:13px;color:var(--gray-dim);
+}
+.footer-bottom .badges{display:flex;gap:10px;flex-wrap:wrap;}
+.footer-bottom .badges span{border:1px solid var(--border);padding:5px 12px;border-radius:100px;}
+
+/* whatsapp floating button */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:90;width:60px;height:60px;border-radius:50%;
+  background:#22c35e;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 30px -8px rgba(34,195,94,0.6);transition:transform .2s ease;
+}
+.wa-float:hover{transform:scale(1.08);}
+.wa-float svg{width:28px;height:28px;fill:#fff;}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1080px){
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .products-grid{grid-template-columns:repeat(3,1fr);}
+  .diff-grid{grid-template-columns:repeat(2,1fr);}
+  .numbers-grid{grid-template-columns:repeat(2,1fr);row-gap:36px;}
+  .num-item:nth-child(2)::after{display:none;}
+  .process-track{grid-template-columns:repeat(2,1fr);row-gap:40px;}
+  .process-track::before{display:none;}
+  .testi-grid{grid-template-columns:repeat(1,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:880px){
+  nav.main-nav{position:fixed;top:82px;left:0;right:0;bottom:0;background:var(--bg);
+    flex-direction:column;justify-content:flex-start;padding:40px 32px;gap:8px;
+    transform:translateX(100%);transition:transform .35s ease;overflow-y:auto;}
+  nav.main-nav.open{transform:translateX(0);}
+  nav.main-nav a{width:100%;padding:16px 0;font-size:18px;border-bottom:1px solid var(--border);}
+  .header-actions .btn-ghost{display:none;}
+  .menu-toggle{display:flex;}
+  .hero-grid{grid-template-columns:1fr;}
+  .hero .terminal{margin-top:20px;}
+  .about-grid{grid-template-columns:1fr;}
+  .about-photo{max-width:340px;margin:0 auto;}
+  .contact-grid{grid-template-columns:1fr;}
+}
+@media (max-width:640px){
+  .container{padding:0 20px;}
+  .section{padding:80px 0;}
+  .services-grid,.products-grid,.diff-grid,.numbers-grid,.process-track{grid-template-columns:1fr;}
+  .num-item::after{display:none;}
+  .footer-grid{grid-template-columns:1fr;gap:36px;}
+  .cta-final{padding:56px 26px;}
+  .terminal-stats{grid-template-columns:1fr;}
+  .terminal-stats div{border-right:none;border-bottom:1px solid var(--border);}
+  .hero-actions .btn{width:100%;}
+}
+
+/* ============ EXTRA: BREADCRUMB ============ */
+.breadcrumb{
+  padding:110px 0 0;font-size:13.5px;color:var(--gray-dim);position:relative;z-index:1;
+}
+.breadcrumb a{color:var(--gray);transition:color .2s ease;}
+.breadcrumb a:hover{color:var(--red-bright);}
+.breadcrumb span{margin:0 8px;}
+
+/* ============ EXTRA: PRICE NOTE STRIP ============ */
+.price-strip{
+  display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--border);
+  border-radius:100px;padding:12px 22px;margin-bottom:40px;width:fit-content;
+}
+.price-strip svg{width:18px;height:18px;stroke:var(--red-bright);flex-shrink:0;}
+.price-strip span{font-size:13.5px;color:var(--gray);}
+
+@media (max-width:640px){ .breadcrumb{padding-top:96px;} }
+</style>
+  <!-- Google tag (gtag.js) event - delayed navigation helper -->
+<script>
+  // Helper function to delay opening a URL until a gtag event is sent.
+  // Call it in response to an action that should navigate to a URL.
+  function gtagSendEvent(url) {
+    var callback = function () {
+      if (typeof url === 'string') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'ads_conversion_Contato_1', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
+    return false;
+  }
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16687517857"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16687517857');
+</script>
+
+<!-- Schema.org: LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ElectronicsStore",
+  "name": "MEGATECH",
+  "image": "https://www.megatechcaxias.com.br/logo-megatech.png",
+  "telephone": "+5554991280472",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Borges de Medeiros, 578 - Sala 3",
+    "addressLocality": "Caxias do Sul",
+    "addressRegion": "RS",
+    "postalCode": "95020-310",
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "areaServed": "Caxias do Sul - RS"
+}
+</script>
+
+<!-- Schema.org: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quanto custa o conserto de notebook em Caxias do Sul?",
+      "acceptedAnswer": {"@type": "Answer", "text": "O valor depende do modelo do notebook e do tipo de reparo necessário. Fazemos um diagnóstico e apresentamos um orçamento sem compromisso antes de iniciar qualquer serviço."}
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês trocam tela de notebook quebrada?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sim, fazemos troca de tela para as principais marcas de notebook, com peças de qualidade e garantia no serviço."}
+    },
+    {
+      "@type": "Question",
+      "name": "Meu notebook está superaquecendo e desligando sozinho, o que pode ser?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Geralmente é acúmulo de poeira no cooler ou pasta térmica ressecada. Fazemos limpeza interna completa e troca de pasta térmica para resolver o problema."}
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês vendem notebooks novos e seminovos?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sim, trabalhamos com notebooks novos, seminovos revisados e notebooks gamer, com garantia e parcelamento em até 12x."}
+    },
+    {
+      "@type": "Question",
+      "name": "O conserto do notebook tem garantia?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sim, todos os serviços realizados possuem 3 meses de garantia e as peças utilizadas possuem 1 ano de garantia."}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader">
+  <div class="container navbar">
+    <a href="/index.html" class="brand"><img src="/logo-megatech.png" alt="MEGATECH"></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="/index.html">Início</a>
+      <a href="#servicos">Conserto</a>
+      <a href="#comprar">Comprar notebook</a>
+      <a href="#marcas">Marcas atendidas</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="header-actions">
+      <a href="https://wa.me/5554991280472" target="_blank" rel="noopener" class="btn btn-ghost">Falar no WhatsApp</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ BREADCRUMB ============ -->
+<nav class="container breadcrumb" aria-label="breadcrumb">
+  <a href="/index.html">MEGATECH</a><span>/</span><span style="color:var(--white)">Conserto e Venda de Notebook em Caxias do Sul</span>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio" style="padding-top:32px;min-height:auto;padding-bottom:60px;">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Assistência técnica e venda de notebooks</div>
+      <h1>Conserto e venda de notebook em <span class="accent">Caxias do Sul</span>, com garantia.</h1>
+      <p class="sub">Troca de tela, teclado, bateria, dobradiça e superaquecimento — além de notebooks novos, seminovos e gamer com garantia e parcelamento em até 12x. Diagnóstico gratuito e orçamento sem compromisso.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5554991280472" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.86.5 3.6 1.38 5.1L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.65 0-3.2-.46-4.53-1.26l-.32-.19-3 .79.8-2.93-.21-.32A8.18 8.18 0 0 1 3.8 12 8.2 8.2 0 1 1 12 20.2zm4.5-6.14c-.25-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.25-.63.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.45-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.16 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.45-.59 1.66-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28z"/></svg>
+          Solicitar orçamento grátis
+        </a>
+        <a href="#comprar" class="btn btn-ghost">Comprar notebook</a>
+      </div>
+      <div class="hero-trust">
+        <div><strong>Notebook Gamer</strong><span>Novos e seminovos</span></div>
+        <div><strong>3 meses</strong><span>Garantia no serviço</span></div>
+        <div><strong>Até 12x</strong><span>Parcelamento facilitado</span></div>
+      </div>
+    </div>
+
+    <div class="terminal reveal">
+      <div class="terminal-bar"><span></span><span></span><span></span><span class="tlabel">diagnostico_notebook.sh</span></div>
+      <div class="terminal-body">
+        <div class="scanline"></div>
+        <div class="line" style="animation-delay:.1s"><span class="tag">&gt;</span> iniciando diagnóstico do notebook...</div>
+        <div class="line" style="animation-delay:.5s"><span class="tag">&gt;</span> verificando tela e dobradiças <span class="ok">[OK]</span></div>
+        <div class="line" style="animation-delay:.9s"><span class="tag">&gt;</span> verificando teclado e touchpad <span class="ok">[OK]</span></div>
+        <div class="line" style="animation-delay:1.3s"><span class="tag">&gt;</span> testando bateria e temperatura <span class="ok">[OK]</span></div>
+        <div class="line" style="animation-delay:1.7s"><span class="tag">&gt;</span> gerando orçamento sem compromisso <span class="ok">[OK]</span></div>
+        <div class="line" style="animation-delay:2.1s"><span class="tag">&gt;</span> notebook pronto para reparo<span class="cursor"></span></div>
+      </div>
+      <div class="terminal-stats">
+        <div><strong>Grátis</strong><span>Diagnóstico</span></div>
+        <div><strong>3 meses</strong><span>Garantia</span></div>
+        <div><strong>Caxias do Sul</strong><span>Atendimento local</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVIÇOS ============ -->
+<section class="section" id="servicos">
+  <div class="container">
+    <div class="price-strip reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+      <span>Diagnóstico gratuito · Orçamento sem compromisso · Reparo com garantia</span>
+    </div>
+    <div class="section-head reveal">
+      <div class="eyebrow">Reparos mais procurados</div>
+      <h2 class="section-title">Conserto de notebook para qualquer problema.</h2>
+      <p class="lead">Atendemos notebooks de todas as marcas em Caxias do Sul, com peças de qualidade e técnicos especializados.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>Troca de tela</h3>
+        <p>Tela quebrada, trincada ou com listras? Reparo rápido com peças de qualidade.</p>
+        <ul><li>Display LCD/LED</li><li>Flat da tela</li></ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="10" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+        <h3>Troca de teclado</h3>
+        <p>Teclas travando, não funcionando ou faltando? Substituição completa do teclado.</p>
+        <ul><li>Teclas não funcionam</li><li>Touchpad</li></ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="1.5"/><path d="M10 7h4"/></svg></div>
+        <h3>Troca de bateria</h3>
+        <p>Notebook descarregando rápido ou só funciona na tomada? Trocamos a bateria com segurança.</p>
+        <ul><li>Bateria original</li><li>Teste de carga</li></ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Superaquecimento</h3>
+        <p>Notebook desligando sozinho ou muito quente? Limpeza interna e troca de pasta térmica.</p>
+        <ul><li>Limpeza de cooler</li><li>Pasta térmica</li></ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="1.5"/><path d="M8 10h2m4 0h2M8 14h8"/></svg></div>
+        <h3>Upgrade SSD/RAM</h3>
+        <p>Notebook lento para abrir programas? Upgrade de SSD e memória RAM aumentam a velocidade.</p>
+        <ul><li>Upgrade SSD</li><li>Upgrade RAM</li></ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+        <h3>Dobradiça e carcaça</h3>
+        <p>Tela solta, dobradiça quebrada ou carcaça rachada? Reparo estrutural do notebook.</p>
+        <ul><li>Dobradiça</li><li>Carcaça</li></ul>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:40px;text-align:center;">
+      <a href="https://wa.me/5554991280472" target="_blank" rel="noopener" class="btn btn-primary">Enviar meu problema no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VENDA DE NOTEBOOKS ============ -->
+<section class="section" id="comprar" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="price-strip reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 3 6v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V6l-9-4z"/></svg>
+      <span>Notebooks com garantia · Parcelamento em até 12x · Aceitamos seu usado na troca</span>
+    </div>
+    <div class="section-head reveal">
+      <div class="eyebrow">Venda de notebooks</div>
+      <h2 class="section-title">Notebooks novos, seminovos e gamer, com garantia.</h2>
+      <p class="lead">Além do conserto, vendemos notebooks para trabalho, estudo e jogos em Caxias do Sul.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>Notebooks novos</h3>
+        <p>Modelos lacrados das principais marcas, com nota fiscal e garantia de fábrica.</p>
+        <ul><li>Dell</li><li>Lenovo</li><li>Acer</li><li>Asus</li></ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Notebooks seminovos</h3>
+        <p>Aparelhos revisados e testados por nossos técnicos, com garantia MEGATECH.</p>
+        <ul><li>Revisão completa</li><li>Bateria testada</li><li>Garantia inclusa</li></ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l1 5H5l1-5zM4 8h16v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8z"/></svg></div>
+        <h3>Notebooks gamer</h3>
+        <p>Modelos com placa de vídeo dedicada, ideais para jogos e edição pesada.</p>
+        <ul><li>Placa de vídeo dedicada</li><li>Alto desempenho</li></ul>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:40px;text-align:center;">
+      <a href="https://wa.me/5554991280472" target="_blank" rel="noopener" class="btn btn-primary">Consultar modelos disponíveis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARCAS ATENDIDAS ============ -->
+<section class="section" id="marcas">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Marcas atendidas</div>
+      <h2 class="section-title">Conserto e venda para qualquer marca.</h2>
+    </div>
+    <div class="products-grid">
+      <div class="product-chip reveal"><span>Dell</span></div>
+      <div class="product-chip reveal"><span>Lenovo</span></div>
+      <div class="product-chip reveal"><span>Acer</span></div>
+      <div class="product-chip reveal"><span>ASUS</span></div>
+      <div class="product-chip reveal"><span>Apple / MacBook</span></div>
+      <div class="product-chip reveal"><span>Samsung</span></div>
+      <div class="product-chip reveal"><span>HP</span></div>
+      <div class="product-chip reveal"><span>Outras marcas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFERENCIAIS ============ -->
+<section class="section" id="diferenciais" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Por que a MEGATECH</div>
+      <h2 class="section-title">Conserto de notebook com transparência em Caxias do Sul.</h2>
+    </div>
+    <div class="diff-grid reveal">
+      <div class="diff-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg><h4>Diagnóstico gratuito</h4><p>Avaliação completa do notebook antes de qualquer serviço.</p></div>
+      <div class="diff-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2v20M2 12h20"/></svg><h4>Orçamento sem compromisso</h4><p>Você só aprova o reparo se concordar com o valor.</p></div>
+      <div class="diff-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><h4>Reparo rápido</h4><p>Agilidade no diagnóstico e execução do serviço.</p></div>
+      <div class="diff-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 3 6v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V6l-9-4z"/></svg><h4>Garantia</h4><p>3 meses de garantia no serviço e 1 ano nas peças.</p></div>
+      <div class="diff-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 21h18M6 21V9l6-4 6 4v12"/></svg><h4>Atendimento para empresas</h4><p>Contratos de manutenção para notebooks corporativos.</p></div>
+      <div class="diff-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><h4>Suporte pós-reparo</h4><p>Acompanhamento após a entrega do notebook.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESSO ============ -->
+<section class="section" id="processo">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Como funciona</div>
+      <h2 class="section-title">Do diagnóstico à entrega, em 4 etapas.</h2>
+    </div>
+    <div class="process-track">
+      <div class="process-step reveal"><div class="process-num">01</div><h4>Diagnóstico gratuito</h4><p>Avaliamos o notebook e identificamos o problema com precisão.</p></div>
+      <div class="process-step reveal"><div class="process-num">02</div><h4>Orçamento sem compromisso</h4><p>Você recebe o valor exato antes de aprovar o serviço.</p></div>
+      <div class="process-step reveal"><div class="process-num">03</div><h4>Reparo especializado</h4><p>Conserto realizado por técnicos experientes, com peças de qualidade.</p></div>
+      <div class="process-step reveal"><div class="process-num">04</div><h4>Entrega com garantia</h4><p>Notebook testado e entregue com garantia de 3 meses.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEPOIMENTOS ============ -->
+<section class="section" id="depoimentos" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Depoimentos</div>
+      <h2 class="section-title">Quem já consertou o notebook com a gente.</h2>
+      <p class="lead">Exemplos de avaliações — substitua pelos depoimentos reais dos seus clientes.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="quote">Quebrei a tela do meu notebook e achei que ia custar muito caro. Fizeram o orçamento na hora e o valor foi justo.</p>
+        <div class="testi-person"><div class="testi-avatar">R</div><div><strong>Renata C.</strong><span>Caxias do Sul</span></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="quote">Meu notebook desligava sozinho de tão quente. Fizeram a limpeza e troca da pasta térmica, resolveu na hora.</p>
+        <div class="testi-person"><div class="testi-avatar">H</div><div><strong>Henrique D.</strong><span>Caxias do Sul</span></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="quote">Comprei um notebook gamer seminovo com garantia, veio revisado e funcionando perfeitamente.</p>
+        <div class="testi-person"><div class="testi-avatar">L</div><div><strong>Leandro F.</strong><span>Caxias do Sul</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Perguntas frequentes</div>
+      <h2 class="section-title">Dúvidas sobre o seu notebook?</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Quanto custa o conserto de notebook em Caxias do Sul? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>O valor depende do modelo do notebook e do tipo de reparo necessário. Fazemos um diagnóstico e apresentamos um orçamento sem compromisso antes de iniciar qualquer serviço.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Vocês trocam tela de notebook quebrada? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Sim, fazemos troca de tela para as principais marcas de notebook, com peças de qualidade e garantia no serviço.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Meu notebook está superaquecendo e desligando sozinho, o que pode ser? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Geralmente é acúmulo de poeira no cooler ou pasta térmica ressecada. Fazemos limpeza interna completa e troca de pasta térmica para resolver o problema.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Vocês vendem notebooks novos e seminovos? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Sim, trabalhamos com notebooks novos, seminovos revisados e notebooks gamer, com garantia e parcelamento em até 12x.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">O conserto do notebook tem garantia? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Sim, todos os serviços realizados possuem 3 meses de garantia e as peças utilizadas possuem 1 ano de garantia.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-final reveal">
+      <h2>Seu notebook com problema? A gente resolve.</h2>
+      <p>Fale agora com a MEGATECH pelo WhatsApp, descreva o problema e receba um diagnóstico rápido.</p>
+      <div class="btn-group">
+        <a href="https://wa.me/5554991280472" target="_blank" rel="noopener" class="btn btn-primary">Chamar no WhatsApp</a>
+        <a href="#contato" class="btn btn-ghost">Ver outros contatos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section class="section" id="contato" style="padding-top:0;">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">Contato</div>
+      <h2 class="section-title">Nossa loja em Caxias do Sul.</h2>
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.6a16 16 0 0 0 6.3 6.3l1.1-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div><strong>Telefone / WhatsApp</strong><a href="tel:+5554991280472">(54) 99128-0472</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <div><strong>E-mail</strong><a href="mailto:infojotati@gmail.com">infojotati@gmail.com</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <div><strong>Endereço</strong><span>Rua Borges de Medeiros, 578 - Sala 3, Centro<br>Caxias do Sul - RS, CEP 95020-310</span></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div><strong>Horário de atendimento</strong><span>Segunda a sexta-feira, das 09h às 18h</span></div>
+        </div>
+      </div>
+      <div class="social-row">
+        <a href="https://instagram.com/megatech.cxs" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://facebook.com/megatech.cxs" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H8v4h2v6h4v-6h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="https://wa.me/5554991280472" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.6a16 16 0 0 0 6.3 6.3l1.1-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg></a>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe loading="lazy" src="https://www.google.com/maps?q=Rua+Borges+de+Medeiros,+578+-+Centro,+Caxias+do+Sul+-+RS,+95020-310&output=embed" allowfullscreen title="Localização MEGATECH"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand"><img src="/logo-megatech.png" alt="MEGATECH" style="height:64px;"></div>
+        <p>Conserto e venda de notebooks em Caxias do Sul - RS. Diagnóstico gratuito e orçamento sem compromisso.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <ul>
+          <li><a href="/index.html">Início</a></li>
+          <li><a href="#servicos">Conserto</a></li>
+          <li><a href="#comprar">Comprar notebook</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Outros reparos</h5>
+        <ul>
+          <li><a href="/celulares.html">Conserto de celular</a></li>
+          <li><a href="/videogames.html">Conserto de videogame</a></li>
+          <li><a href="/impressoras.html">Conserto de impressora</a></li>
+          <li><a href="/computadores.html">Conserto de computador</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="tel:+5554991280472">(54) 99128-0472</a></li>
+          <li><a href="mailto:infojotati@gmail.com">infojotati@gmail.com</a></li>
+          <li><a href="#contato">Rua Borges de Medeiros, 578 - Centro</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MEGATECH. Todos os direitos reservados.</span>
+      <div class="badges"><span>Pix</span><span>Débito</span><span>Crédito</span><span>Boleto 12x</span></div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5554991280472" target="_blank" rel="noopener" class="wa-float" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.6a16 16 0 0 0 6.3 6.3l1.1-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+</a>
+
+<script>
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', ()=>{ header.classList.toggle('scrolled', window.scrollY > 10); },{passive:true});
+
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+menuToggle.addEventListener('click', ()=>{ menuToggle.classList.toggle('open'); mainNav.classList.toggle('open'); });
+mainNav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{ menuToggle.classList.remove('open'); mainNav.classList.remove('open'); }));
+
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); } });
+},{threshold:0.15});
+revealEls.forEach(el=>io.observe(el));
+
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', ()=>{
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(other=>{
+      other.classList.remove('open');
+      other.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
