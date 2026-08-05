@@ -475,6 +475,30 @@ footer{border-top:1px solid var(--border);padding:70px 0 30px;position:relative;
   .services-table{font-size:13px;}
   .services-table th,.services-table td{padding:12px 14px;}
 }
+
+/* ============ EXTRA: GROWTH DASHBOARD (hero) ============ */
+.dash-card{
+  position:relative;background:linear-gradient(180deg,var(--surface) 0%, var(--surface-2) 100%);
+  border:1px solid var(--border-strong);border-radius:16px;overflow:hidden;
+  box-shadow:0 30px 80px -30px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.02) inset;
+}
+.dash-chart{position:relative;padding:32px 26px 12px;min-height:260px;}
+.dash-chart svg{width:100%;height:auto;display:block;overflow:visible;}
+.dash-bars rect{transform-box:fill-box;transform-origin:bottom;animation:barGrow 1s cubic-bezier(.2,.9,.3,1) both;}
+@keyframes barGrow{from{transform:scaleY(0);}to{transform:scaleY(1);}}
+.dash-line{stroke-dasharray:400;stroke-dashoffset:400;animation:lineDraw 1.8s ease forwards .4s;}
+@keyframes lineDraw{to{stroke-dashoffset:0;}}
+.dash-dot{opacity:0;animation:dotPop .4s ease forwards 2.1s, dotPulse 2s ease-in-out infinite 2.5s;}
+@keyframes dotPop{to{opacity:1;}}
+@keyframes dotPulse{0%,100%{r:5;opacity:1;}50%{r:7;opacity:.6;}}
+.dash-caption{
+  text-align:center;font-size:11.5px;color:var(--gray-dim);padding:0 20px 18px;letter-spacing:0.02em;
+}
+.dash-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);}
+.dash-stats div{padding:20px 16px;text-align:center;border-right:1px solid var(--border);}
+.dash-stats div:last-child{border-right:none;}
+.dash-stats strong{display:block;font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--red-bright);}
+.dash-stats span{font-size:11.5px;color:var(--gray-dim);text-transform:uppercase;letter-spacing:0.05em;}
 </style>
   <!-- Google tag (gtag.js) event - delayed navigation helper -->
 <script>
@@ -600,7 +624,7 @@ footer{border-top:1px solid var(--border);padding:70px 0 30px;position:relative;
   <div class="container hero-grid">
     <div>
       <div class="eyebrow">Marketing digital para empresas</div>
-      <h1>Mais clientes, mais pedidos, mais <span class="accent">faturamento</span> para o seu negócio.</h1>
+      <h1>Mais clientes, mais pedidos, mais <span class="accent">visibilidade</span> para o seu negócio.</h1>
       <p class="sub">Gestão de tráfego pago, redes sociais, Google Meu Negócio e site profissional — tudo para o seu negócio ser encontrado e gerar mais pedidos pelo WhatsApp em Caxias do Sul.</p>
       <div class="hero-actions">
         <a href="https://wa.me/5554991280472" target="_blank" rel="noopener" class="btn btn-primary">
@@ -616,21 +640,35 @@ footer{border-top:1px solid var(--border);padding:70px 0 30px;position:relative;
       </div>
     </div>
 
-    <div class="terminal reveal">
-      <div class="terminal-bar"><span></span><span></span><span></span><span class="tlabel">campanha_marketing.sh</span></div>
-      <div class="terminal-body">
-        <div class="scanline"></div>
-        <div class="line" style="animation-delay:.1s"><span class="tag">&gt;</span> analisando presença digital do negócio...</div>
-        <div class="line" style="animation-delay:.5s"><span class="tag">&gt;</span> verificando redes sociais <span class="ok">[OK]</span></div>
-        <div class="line" style="animation-delay:.9s"><span class="tag">&gt;</span> configurando campanhas Meta Ads <span class="ok">[OK]</span></div>
-        <div class="line" style="animation-delay:1.3s"><span class="tag">&gt;</span> otimizando para gerar pedidos <span class="ok">[OK]</span></div>
-        <div class="line" style="animation-delay:1.7s"><span class="tag">&gt;</span> montando proposta sob medida <span class="ok">[OK]</span></div>
-        <div class="line" style="animation-delay:2.1s"><span class="tag">&gt;</span> pronto para aumentar seus pedidos<span class="cursor"></span></div>
+    <div class="dash-card reveal">
+      <div class="terminal-bar"><span></span><span></span><span></span><div class="tlabel">Dashboard de resultados</div></div>
+      <div class="dash-chart">
+        <svg viewBox="0 0 400 220" preserveAspectRatio="none">
+          <!-- grid lines -->
+          <line x1="0" y1="40" x2="400" y2="40" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+          <line x1="0" y1="100" x2="400" y2="100" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+          <line x1="0" y1="160" x2="400" y2="160" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+          <!-- bars -->
+          <g class="dash-bars">
+            <rect x="20"  y="150" width="34" height="60"  rx="4" fill="rgba(227,28,47,0.18)" style="animation-delay:.1s"/>
+            <rect x="76"  y="130" width="34" height="80"  rx="4" fill="rgba(227,28,47,0.24)" style="animation-delay:.25s"/>
+            <rect x="132" y="115" width="34" height="95"  rx="4" fill="rgba(227,28,47,0.32)" style="animation-delay:.4s"/>
+            <rect x="188" y="95"  width="34" height="115" rx="4" fill="rgba(227,28,47,0.42)" style="animation-delay:.55s"/>
+            <rect x="244" y="70"  width="34" height="140" rx="4" fill="rgba(227,28,47,0.55)" style="animation-delay:.7s"/>
+            <rect x="300" y="42"  width="34" height="168" rx="4" fill="rgba(227,28,47,0.7)"  style="animation-delay:.85s"/>
+            <rect x="356" y="18"  width="34" height="192" rx="4" fill="var(--red-bright)"     style="animation-delay:1s"/>
+          </g>
+          <!-- trend line -->
+          <polyline class="dash-line" points="37,190 93,175 149,155 205,130 261,105 317,65 373,35"
+            fill="none" stroke="var(--red-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle class="dash-dot" cx="373" cy="35" r="5" fill="var(--red-bright)"/>
+        </svg>
       </div>
-      <div class="terminal-stats">
-        <div><strong>Meta Ads</strong><span>Facebook/Instagram</span></div>
-        <div><strong>Google</strong><span>Meu Negócio</span></div>
-        <div><strong>Site</strong><span>Profissional</span></div>
+      <p class="dash-caption">Exemplo ilustrativo de evolução de resultados com marketing digital</p>
+      <div class="dash-stats">
+        <div><strong>Alcance</strong><span>Mais pessoas impactadas</span></div>
+        <div><strong>Cliques</strong><span>Mais visitas e contatos</span></div>
+        <div><strong>Pedidos</strong><span>Mais vendas pelo WhatsApp</span></div>
       </div>
     </div>
   </div>
