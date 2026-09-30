@@ -2,7 +2,7 @@
  * Browser: Pixel (fbq)  |  Servidor: /api/meta-capi (Cloudflare Pages Function)
  */
 (function () {
-  var PIXEL_ID = 'SEU_PIXEL_ID'; // <- ID do conjunto de dados (Gerenciador de Eventos)
+  var PIXEL_ID = '2123883364879671'; // <- ID do conjunto de dados (Gerenciador de Eventos)
   var CAPI_ENDPOINT = '/api/meta-capi';
 
   // ---- Pixel base code ----
