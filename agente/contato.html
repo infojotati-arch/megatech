@@ -93,6 +93,8 @@
   .footer-desc{color:var(--text-muted); font-size:14px; max-width:280px; margin-top:14px;}
   .footer-bottom{margin-top:48px; padding-top:24px; border-top:1px solid var(--border); font-size:12.5px; color:var(--text-dim); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
 </style>
+<!-- Meta Pixel + API de Conversões -->
+<script src="/js/meta.js" defer></script>
 </head>
 <body>
 
@@ -140,7 +142,7 @@
   <div class="wrap">
     <div class="grid-2">
       <div class="form-card" data-reveal>
-        <form id="contact-form" onsubmit="event.preventDefault(); document.getElementById('form-success').style.display='block'; this.style.display='none';">
+        <form id="contact-form" onsubmit="event.preventDefault(); try{if(window.megaTrack){var n=(document.getElementById('nome').value||'').trim().split(' ');megaTrack('Lead',{content_name:'Agente MEGATECH - contato'},{em:document.getElementById('email').value,fn:n.shift(),ln:n.join(' ')});}}catch(e){} document.getElementById('form-success').style.display='block'; this.style.display='none';">
           <div class="form-row"><label for="nome">Nome</label><input type="text" id="nome" autocomplete="name" required></div>
           <div class="form-row"><label for="empresa">Empresa</label><input type="text" id="empresa" autocomplete="organization" required></div>
           <div class="form-row"><label for="email">E-mail</label><input type="email" id="email" autocomplete="email" required></div>

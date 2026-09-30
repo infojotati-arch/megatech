@@ -184,6 +184,8 @@
   .footer-desc{color:var(--text-muted); font-size:14px; max-width:280px; margin-top:14px;}
   .footer-bottom{margin-top:48px; padding-top:24px; border-top:1px solid var(--border); font-size:12.5px; color:var(--text-dim); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
 </style>
+<!-- Meta Pixel + API de Conversões -->
+<script src="/js/meta.js" defer></script>
 </head>
 <body>
 
@@ -405,7 +407,7 @@
       <p>Fale com a gente e veja como o AGENTE se encaixa na sua operação.</p>
     </div>
     <div class="contact-card" data-reveal>
-      <form id="contact-form" onsubmit="event.preventDefault(); document.getElementById('form-success').style.display='block'; this.style.display='none';">
+      <form id="contact-form" onsubmit="event.preventDefault(); try{if(window.megaTrack){megaTrack('Lead',{content_name:'Agente MEGATECH - contato'},{em:document.getElementById('f-email').value,ph:document.getElementById('f-telefone').value,fn:document.getElementById('f-nome').value,ln:document.getElementById('f-sobrenome').value});}}catch(e){} document.getElementById('form-success').style.display='block'; this.style.display='none';">
         <div class="grid-2-form">
           <div class="form-row"><label for="f-nome">Nome</label><input type="text" id="f-nome" autocomplete="given-name" required></div>
           <div class="form-row"><label for="f-sobrenome">Sobrenome</label><input type="text" id="f-sobrenome" autocomplete="family-name" required></div>
